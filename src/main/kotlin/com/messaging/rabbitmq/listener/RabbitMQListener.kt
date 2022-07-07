@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service
 class RabbitMQListener(
         private val messageConverter: MessageConverter
 ) {
-
     private val log = LoggerFactory.getLogger(javaClass)
 
     @RabbitListener(queues = ["USER-MODEL-QUEUE"])
@@ -22,7 +21,4 @@ class RabbitMQListener(
         val userModel = messageConverter.fromMessage(message) as UserModel
         log.info("$userModel")
     }
-
-
-
 }

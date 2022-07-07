@@ -15,12 +15,8 @@ class RabbitMQConfig {
         return Jackson2JsonMessageConverter(objectMapper)
     }
 
-
     @Bean
     fun createUserQueue() : Queue?{
         return Queue("USER-MODEL-QUEUE", true)
     }
-
-
-
 }
